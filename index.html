@@ -8,6 +8,23 @@
   <link rel="icon" href="favicon.png">
   <style>
     body { font-family: 'Segoe UI', sans-serif; }
+    .logo-glow {
+      filter: drop-shadow(0 0 32px #C9A14C66);
+      transition: filter 0.3s;
+    }
+    .logo-glow:hover {
+      filter: drop-shadow(0 0 48px #ffd700cc);
+    }
+    .glassy {
+      background: rgba(25, 22, 6, 0.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid #c9a14c33;
+    }
+    .gradient-border {
+      border-image: linear-gradient(120deg, #c9a14c, #ffd70033, #232323) 1;
+      border-width: 2px;
+      border-style: solid;
+    }
   </style>
 </head>
 <body class="bg-black text-gray-200">
@@ -22,152 +39,166 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black">
-    <img src="https://imgur.com/a/9QgiSgF" alt="ZENTA Logo" class="w-24 mb-6">
-    <h1 class="text-5xl font-bold text-yellow-500">ZENTA</h1>
-    <p class="mt-4 text-lg max-w-2xl text-gray-400" id="hero-text">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-[#232323] to-black relative">
+    <!-- Decorative Circles -->
+    <div class="absolute top-16 left-1/4 w-48 h-48 bg-yellow-900/10 rounded-full blur-2xl -z-10"></div>
+    <div class="absolute bottom-20 right-1/5 w-72 h-72 bg-yellow-500/20 rounded-full blur-2xl -z-10"></div>
+    <!-- LOGO -->
+    <img src="image1" alt="ZENTA Logo" class="w-32 mb-6 logo-glow shadow-lg rounded-full border-4 border-yellow-500 gradient-border" />
+    <h1 class="text-6xl sm:text-7xl font-black text-yellow-500 tracking-tight drop-shadow-[0_2px_12px_rgba(201,161,76,0.8)]">ZENTA</h1>
+    <p class="mt-4 text-xl sm:text-2xl max-w-2xl text-yellow-100 font-medium glassy rounded-xl px-6 py-4 border border-yellow-900/30 shadow-xl" id="hero-text">
       The Ultimate Competitive Arena. Join the future of esports and elite tournaments.
     </p>
 
     <!-- Countdown Timer -->
-    <div class="mt-8 text-center">
-      <h3 class="text-xl text-yellow-400">Next Tournament Starts In:30D</h3>
-      <div id="countdown" class="mt-2 text-2xl font-mono text-yellow-500"></div>
+    <div class="mt-10 text-center glassy rounded-2xl px-8 py-6 border border-yellow-800/40 shadow-lg inline-block">
+      <h3 class="text-2xl text-yellow-400 font-bold mb-2">Next Tournament Starts In</h3>
+      <div id="countdown" class="text-3xl font-mono text-yellow-500"></div>
     </div>
 
     <!-- Discord Button -->
-    <a href="https://discord.gg/xve6Z4fnkE" class="mt-6 px-6 py-3 bg-yellow-500 text-black font-bold rounded-xl hover:bg-yellow-400 transition">
+    <a href="https://discord.gg/xve6Z4fnkE" class="mt-8 px-8 py-4 bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform border-2 border-yellow-800/20">
       Join Our Discord
     </a>
   </section>
 
   <!-- About -->
-  <section class="px-8 py-16 bg-gray-900">
-    <h2 class="text-3xl font-bold mb-4 text-yellow-500">About ZENTA</h2>
-    <p class="text-lg text-gray-300 max-w-3xl" id="about-text">
-      ZENTA is more than just a tournament platform — it's a future gaming empire. From Fortnite to Blood Strike and Free Fire, we’re building the battlefield for tomorrow’s champions. Expect cash prizes, crypto rewards, and next-level community tournaments. Whether you’re a pro, an up-and-coming gamer, or just want to experience esports like never before, ZENTA is your home base.
-    </p>
+  <section class="px-8 py-20 bg-gradient-to-br from-[#181818] via-[#232323] to-black glassy">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center gap-8">
+        <img src="image1" alt="ZENTA Emblem" class="w-28 mb-6 sm:mb-0 logo-glow border-2 border-yellow-600 rounded-xl bg-black p-2 shadow-lg" />
+        <div>
+          <h2 class="text-4xl font-extrabold mb-4 text-yellow-500">What is ZENTA?</h2>
+          <p class="text-lg text-gray-200 font-medium" id="about-text">
+            ZENTA is more than just a tournament platform — it's a future gaming empire.<br>
+            From Fortnite to Blood Strike and Free Fire, we’re building the battlefield for tomorrow’s champions.<br>
+            Expect cash prizes, crypto rewards, and next-level community tournaments.<br>
+            Whether you’re a pro, an up-and-coming gamer, or just want to experience esports like never before, ZENTA is your home base.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Email Signup -->
-  <section class="px-8 py-12 bg-black text-center">
-    <h3 class="text-2xl text-yellow-500 font-bold mb-2">Stay in the loop</h3>
-    <p class="text-gray-400 mb-4">Get notified about tournaments, drops & rewards.</p>
-    <form action="https://YOURMAILCHIMPURL" method="post" target="_blank" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <input type="email" name="EMAIL" required placeholder="Your email" class="px-4 py-2 rounded bg-gray-800 text-white border border-gray-700 w-64">
-      <button type="submit" class="bg-yellow-500 text-black font-semibold px-5 py-2 rounded hover:bg-yellow-400">Subscribe</button>
-    </form>
+  <section class="px-8 py-16 bg-black text-center">
+    <div class="max-w-2xl mx-auto glassy rounded-xl p-8 border border-yellow-700/30 shadow-lg">
+      <h3 class="text-3xl text-yellow-500 font-bold mb-2">Stay in the loop</h3>
+      <p class="text-yellow-100 mb-4">Get notified about tournaments, drops & rewards.</p>
+      <form action="https://YOURMAILCHIMPURL" method="post" target="_blank" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <input type="email" name="EMAIL" required placeholder="Your email" class="px-4 py-2 rounded bg-gray-800 text-white border border-yellow-800/30 w-64 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        <button type="submit" class="bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-semibold px-6 py-2 rounded-lg hover:bg-yellow-400 border-2 border-yellow-800/20 shadow-md">Subscribe</button>
+      </form>
+    </div>
   </section>
 
-  <!-- Social Links -->
-  <section class="px-8 py-16 bg-gray-900 text-gray-200">
-  <h2 class="text-3xl font-bold mb-4 text-yellow-500 text-center">About ZENTA</h2>
-
-  <p class="text-lg max-w-4xl mx-auto mb-6 text-gray-300">
-    <strong>ZENTA</strong> isn’t just a tournament brand — it’s the <span class="font-bold text-yellow-400">next generation gaming empire</span>.
-    Founded by passionate gamers and digital rebels, ZENTA was built with one mission:
-    to empower competitive players globally, especially in underserved gaming communities. 
-    We believe that esports should be accessible, rewarding, and community-driven.
-  </p>
-
-  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
-    <!-- Games We Host -->
-    <div>
-      <h3 class="text-xl font-semibold text-yellow-400 mb-2">🎮 Games We Host</h3>
-      <ul class="list-disc list-inside space-y-2 text-gray-300">
-        <li>Fortnite: Build & battle your way to glory</li>
-        <li>Free Fire: Fast-paced, mobile-first mayhem</li>
-        <li>Blood Strike: Hardcore FPS face-offs</li>
-        <li>Call of Duty Mobile: Tactical warfare tournaments</li>
-        <li>Roblox: Wildcard game modes + mini events</li>
-        <li>Minecraft: Mini-events, build contests & survival showdowns</li>
-      </ul>
+  <!-- Social Links & Features -->
+  <section class="px-8 py-20 bg-gradient-to-br from-gray-900 via-black to-[#232323] text-gray-200">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:gap-16 gap-10">
+        <!-- Games We Host -->
+        <div class="flex-1 glassy rounded-xl p-8 border border-yellow-900/40 shadow-lg">
+          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">🎮 Games We Host</h3>
+          <ul class="list-disc list-inside space-y-2 text-yellow-100 text-lg">
+            <li>Fortnite: Build & battle your way to glory</li>
+            <li>Free Fire: Fast-paced, mobile-first mayhem</li>
+            <li>Blood Strike: Hardcore FPS face-offs</li>
+            <li>Call of Duty Mobile: Tactical warfare tournaments</li>
+            <li>Roblox: Wildcard game modes + mini events</li>
+            <li>Minecraft: Mini-events, build contests & survival showdowns</li>
+          </ul>
+        </div>
+        <!-- Why ZENTA -->
+        <div class="flex-1 glassy rounded-xl p-8 border border-yellow-900/40 shadow-lg">
+          <h3 class="text-2xl font-semibold text-yellow-400 mb-4">⚔️ Why ZENTA Is Different</h3>
+          <ul class="list-disc list-inside space-y-2 text-yellow-100 text-lg">
+            <li>Accessible to gamers in Africa, Asia, and global South</li>
+            <li>Real cash prizes + crypto rewards</li>
+            <li>Next-gen Discord + web integration</li>
+            <li>Community-built, player-first tournaments</li>
+            <li>Future-proof vision: gaming, content, NFT, metaverse</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Roadmap -->
+      <div class="mt-16 max-w-3xl mx-auto glassy rounded-xl p-8 border border-yellow-900/40 shadow-lg">
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">📈 Roadmap</h3>
+        <ol class="list-decimal list-inside space-y-2 text-yellow-100 text-lg">
+          <li>Launch flagship tournaments (ZENTA: Phase 1)</li>
+          <li>Build Discord & web dashboard with leaderboard + earnings</li>
+          <li>Release mobile-friendly companion app</li>
+          <li>Start ZENTA Creator Program (partner with streamers)</li>
+          <li>Host global tourneys & e-sports influencer collabs</li>
+          <li>Expand into 3D arenas, NFT utility, & skins economy</li>
+        </ol>
+      </div>
     </div>
-
-    <!-- Why ZENTA -->
-    <div>
-      <h3 class="text-xl font-semibold text-yellow-400 mb-2">⚔️ Why ZENTA Is Different</h3>
-      <ul class="list-disc list-inside space-y-2 text-gray-300">
-        <li>Accessible to gamers in Africa, Asia, and global South</li>
-        <li>Real cash prizes + crypto rewards</li>
-        <li>Next-gen Discord + web integration</li>
-        <li>Community-built, player-first tournaments</li>
-        <li>Future-proof vision: gaming, content, NFT, metaverse</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- Roadmap -->
-  <div class="mt-12 max-w-4xl mx-auto">
-    <h3 class="text-xl font-semibold text-yellow-400 mb-4 text-center">📈 Roadmap</h3>
-    <ol class="list-decimal list-inside space-y-2 text-gray-300">
-      <li>Launch flagship tournaments (ZENTA: Phase 1)</li>
-      <li>Build Discord & web dashboard with leaderboard + earnings</li>
-      <li>Release mobile-friendly companion app</li>
-      <li>Start ZENTA Creator Program (partner with streamers)</li>
-      <li>Host global tourneys & e-sports influencer collabs</li>
-      <li>Expand into 3D arenas, NFT utility, & skins economy</li>
-    </ol>
-  </div>
-</section>
+  </section>
 
   <!-- Team Section -->
-  <section class="px-8 py-16 bg-black text-gray-200">
-    <h2 class="text-3xl font-bold mb-6 text-yellow-500 text-center">Meet the Team</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="bg-gray-800 rounded-lg p-6 text-center">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Founder" class="w-20 h-20 rounded-full mx-auto mb-3">
-        <h4 class="text-lg font-bold text-yellow-400">Alex "Zenta" Smith</h4>
-        <p class="text-gray-300">Founder & CEO</p>
-        <p class="mt-2 text-gray-400 text-sm">Visionary, esports strategist, and lifelong gamer. Building the future of competitive play.</p>
+  <section class="px-8 py-20 bg-black text-gray-200">
+    <h2 class="text-4xl font-bold mb-10 text-yellow-500 text-center">Meet the Team</h2>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl">
+        <img src="image1" alt="Founder" class="w-24 h-24 rounded-full mx-auto mb-4 logo-glow border-2 border-yellow-600" />
+        <h4 class="text-xl font-bold text-yellow-400">Alex "Zenta" Smith</h4>
+        <p class="text-yellow-100 font-medium">Founder & CEO</p>
+        <p class="mt-2 text-gray-400 text-base">Visionary, esports strategist, and lifelong gamer. Building the future of competitive play.</p>
       </div>
-      <div class="bg-gray-800 rounded-lg p-6 text-center">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Community Lead" class="w-20 h-20 rounded-full mx-auto mb-3">
-        <h4 class="text-lg font-bold text-yellow-400">Jade "Pulse" Liu</h4>
-        <p class="text-gray-300">Community Lead</p>
-        <p class="mt-2 text-gray-400 text-sm">Champion for diversity and inclusion, connecting gamers worldwide.</p>
+      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Community Lead" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-yellow-600" />
+        <h4 class="text-xl font-bold text-yellow-400">Jade "Pulse" Liu</h4>
+        <p class="text-yellow-100 font-medium">Community Lead</p>
+        <p class="mt-2 text-gray-400 text-base">Champion for diversity and inclusion, connecting gamers worldwide.</p>
       </div>
-      <div class="bg-gray-800 rounded-lg p-6 text-center">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dev Lead" class="w-20 h-20 rounded-full mx-auto mb-3">
-        <h4 class="text-lg font-bold text-yellow-400">Sam "Zero" Adeniyi</h4>
-        <p class="text-gray-300">Lead Developer</p>
-        <p class="mt-2 text-gray-400 text-sm">Engineer, code ninja, and architect of the ZENTA platform.</p>
+      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dev Lead" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-yellow-600" />
+        <h4 class="text-xl font-bold text-yellow-400">Sam "Zero" Adeniyi</h4>
+        <p class="text-yellow-100 font-medium">Lead Developer</p>
+        <p class="mt-2 text-gray-400 text-base">Engineer, code ninja, and architect of the ZENTA platform.</p>
       </div>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="px-8 py-16 bg-gray-900 text-gray-200">
-    <h2 class="text-3xl font-bold mb-6 text-yellow-500 text-center">Frequently Asked Questions</h2>
-    <div class="max-w-4xl mx-auto space-y-6">
-      <div>
+  <section class="px-8 py-20 bg-gradient-to-b from-gray-900 via-black to-[#232323] text-gray-200">
+    <h2 class="text-4xl font-bold mb-10 text-yellow-500 text-center">Frequently Asked Questions</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
         <h4 class="font-bold text-yellow-400">How do I join a tournament?</h4>
-        <p class="text-gray-300 mt-1">Join our Discord and check the tournaments channel. Registration links, rules, and schedules are posted there and on our upcoming web dashboard.</p>
+        <p class="text-yellow-100 mt-2">Join our Discord and check the tournaments channel. Registration links, rules, and schedules are posted there and on our upcoming web dashboard.</p>
       </div>
-      <div>
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
         <h4 class="font-bold text-yellow-400">Is ZENTA free to join?</h4>
-        <p class="text-gray-300 mt-1">Yes! Participation in most tournaments is free. Premium events may require an entry fee, but there are always free competitions available.</p>
+        <p class="text-yellow-100 mt-2">Yes! Participation in most tournaments is free. Premium events may require an entry fee, but there are always free competitions available.</p>
       </div>
-      <div>
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
         <h4 class="font-bold text-yellow-400">What prizes can I win?</h4>
-        <p class="text-gray-300 mt-1">Winners can earn real cash, crypto rewards, exclusive digital items, and more. Prize pools vary by tournament.</p>
+        <p class="text-yellow-100 mt-2">Winners can earn real cash, crypto rewards, exclusive digital items, and more. Prize pools vary by tournament.</p>
       </div>
-      <div>
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
         <h4 class="font-bold text-yellow-400">Which regions do you support?</h4>
-        <p class="text-gray-300 mt-1">We focus on Africa, Asia, and the global South, but players from anywhere are welcome. Some tournaments may have region locks for fairness.</p>
+        <p class="text-yellow-100 mt-2">We focus on Africa, Asia, and the global South, but players from anywhere are welcome. Some tournaments may have region locks for fairness.</p>
       </div>
-      <div>
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
         <h4 class="font-bold text-yellow-400">How can I get involved as a creator or sponsor?</h4>
-        <p class="text-gray-300 mt-1">Apply for our Creator Program or contact us via Discord for sponsorship opportunities and partnerships.</p>
+        <p class="text-yellow-100 mt-2">Apply for our Creator Program or contact us via Discord for sponsorship opportunities and partnerships.</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-sm text-gray-500 bg-black">
-    &copy; 2025 ZENTA. All rights reserved.
+  <footer class="text-center py-8 text-base text-yellow-100 bg-black border-t border-yellow-800/15 glassy">
+    <div class="flex items-center justify-center gap-3 mb-2">
+      <img src="image1" alt="ZENTA Logo" class="w-10 h-10 logo-glow rounded" />
+      <span class="font-bold tracking-wide">ZENTA</span>
+    </div>
+    <div>
+      <a href="https://discord.gg/xve6Z4fnkE" class="mx-2 text-yellow-400 hover:underline">Discord</a> |
+      <a href="#" class="mx-2 text-yellow-400 hover:underline">Twitter</a> |
+      <a href="#" class="mx-2 text-yellow-400 hover:underline">Instagram</a>
+    </div>
+    <div class="mt-2">&copy; 2025 ZENTA. All rights reserved.</div>
   </footer>
 
   <!-- Scripts -->
@@ -193,9 +224,9 @@
         es: "La arena competitiva definitiva. Únete al futuro de los eSports y torneos élite."
       };
       const aboutText = {
-        en: "ZENTA is more than just a tournament platform — it's a future gaming empire. From Fortnite to Blood Strike and Free Fire, we’re building the battlefield for tomorrow’s champions. Expect cash prizes, crypto rewards, and next-level community tournaments. Whether you’re a pro, an up-and-coming gamer, or just want to experience esports like never before, ZENTA is your home base.",
-        fr: "ZENTA est bien plus qu'une plateforme de tournoi — c'est un empire du jeu en devenir. De Fortnite à Blood Strike et Free Fire, nous construisons le champ de bataille des champions de demain. Attendez-vous à des prix en argent, des récompenses crypto et des tournois communautaires de nouvelle génération. Que vous soyez un pro, un joueur en herbe ou que vous vouliez simplement vivre l'esport autrement, ZENTA est votre base.",
-        es: "ZENTA es más que una plataforma de torneos: es un imperio del juego del futuro. Desde Fortnite hasta Blood Strike y Free Fire, estamos construyendo el campo de batalla para los campeones del mañana. Espera premios en efectivo, recompensas en cripto y torneos comunitarios de otro nivel. Seas profesional, promesa emergente o solo quieras vivir los esports de forma diferente, ZENTA es tu base."
+        en: "ZENTA is more than just a tournament platform — it's a future gaming empire.\nFrom Fortnite to Blood Strike and Free Fire, we’re building the battlefield for tomorrow’s champions.\nExpect cash prizes, crypto rewards, and next-level community tournaments.\nWhether you’re a pro, an up-and-coming gamer, or just want to experience esports like never before, ZENTA is your home base.",
+        fr: "ZENTA est bien plus qu'une plateforme de tournoi — c'est un empire du jeu en devenir.\nDe Fortnite à Blood Strike et Free Fire, nous construisons le champ de bataille des champions de demain.\nAttendez-vous à des prix en argent, des récompenses crypto et des tournois communautaires de nouvelle génération.\nQue vous soyez un pro, un joueur en herbe ou que vous vouliez simplement vivre l'esport autrement, ZENTA est votre base.",
+        es: "ZENTA es más que una plataforma de torneos: es un imperio del juego del futuro.\nDesde Fortnite hasta Blood Strike y Free Fire, estamos construyendo el campo de batalla para los campeones del mañana.\nEspera premios en efectivo, recompensas en cripto y torneos comunitarios de otro nivel.\nSeas profesional, promesa emergente o solo quieras vivir los esports de forma diferente, ZENTA es tu base."
       };
       document.getElementById("hero-text").innerText = heroText[lang];
       document.getElementById("about-text").innerText = aboutText[lang];

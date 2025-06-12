@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>ZENTA | The Ultimate Esports Tournament Platform</title>
   <meta name="description" content="ZENTA is the next-gen esports tournament platform. Compete in tournaments, win real prizes, and join the most vibrant gaming community." />
   <meta name="keywords" content="esports, tournaments, gaming, ZENTA, crypto rewards, cash prizes, community, Fortnite, Free Fire, Blood Strike, Call of Duty Mobile, Roblox, Minecraft, competitive gaming, online tournaments, gamer, Africa, Asia, global South, Discord, NFT, metaverse">
@@ -58,6 +57,27 @@
     /* Reveal Animations */
     .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);}
     .reveal.visible { opacity: 1; transform: none; }
+    /* Pro Animations */
+    .glow-anim { animation: glowAnim 2.5s linear infinite alternate; }
+    @keyframes glowAnim {
+      from { filter: drop-shadow(0 0 16px #ffd70088); }
+      to { filter: drop-shadow(0 0 32px #ffd700cc);}
+    }
+    .btn-flicker {
+      animation: flicker 2s infinite alternate;
+    }
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity:1; }
+      20%, 22%, 55% { opacity:.4; }
+    }
+    .parallax-float {
+      animation: parallaxFloat 8s ease-in-out infinite alternate;
+    }
+    @keyframes parallaxFloat {
+      0% { transform: translateY(0) scale(1);}
+      50% { transform: translateY(-32px) scale(1.05);}
+      100% { transform: translateY(0) scale(1);}
+    }
   </style>
 </head>
 <body class="bg-black text-gray-200">
@@ -66,7 +86,7 @@
   <header class="navbar-sticky border-b border-yellow-900/20">
     <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 relative">
       <a href="#hero" class="flex items-center gap-2">
-        <img src="logo.png" alt="ZENTA Logo" class="w-10 h-10 logo-glow rounded-full border-2 border-yellow-500 gradient-border" />
+        <img src="logo.png" alt="ZENTA Logo" class="w-10 h-10 logo-glow glow-anim rounded-full border-2 border-yellow-500 gradient-border" />
         <span class="font-orbitron text-2xl font-black text-yellow-400 tracking-widest">ZENTA</span>
       </a>
       <!-- Desktop Nav -->
@@ -79,7 +99,7 @@
         <li><a href="#contact" class="hover:text-yellow-400 transition nav-link">Contact</a></li>
       </ul>
       <!-- Discord Button -->
-      <a href="https://discord.gg/xve6Z4fnkE" target="_blank" class="hidden lg:inline px-5 py-2 bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold rounded-xl btn-glow shadow-xl hover:scale-105 transition-transform duration-150 ml-6">
+      <a href="https://discord.gg/xve6Z4fnkE" target="_blank" class="hidden lg:inline px-5 py-2 bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold rounded-xl btn-glow btn-flicker shadow-xl hover:scale-105 transition-transform duration-150 ml-6">
         Join Discord
       </a>
       <!-- Mobile Nav Button -->
@@ -97,16 +117,16 @@
       <a href="#team" class="hover:text-yellow-400 transition nav-link">Team</a>
       <a href="#faq" class="hover:text-yellow-400 transition nav-link">FAQ</a>
       <a href="#contact" class="hover:text-yellow-400 transition nav-link">Contact</a>
-      <a href="https://discord.gg/xve6Z4fnkE" target="_blank" class="px-6 py-3 bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold rounded-xl btn-glow shadow-xl hover:scale-105 transition-transform duration-150">Join Discord</a>
+      <a href="https://discord.gg/xve6Z4fnkE" target="_blank" class="px-6 py-3 bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold rounded-xl btn-glow btn-flicker shadow-xl hover:scale-105 transition-transform duration-150">Join Discord</a>
     </div>
   </header>
 
   <!-- HERO Section -->
   <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-[#232323] to-black relative">
     <!-- Decorative Circles -->
-    <div class="absolute top-16 left-1/4 w-48 h-48 bg-yellow-900/10 rounded-full blur-2xl -z-10"></div>
-    <div class="absolute bottom-20 right-1/5 w-72 h-72 bg-yellow-500/20 rounded-full blur-2xl -z-10"></div>
-    <img src="logo.png" alt="ZENTA Logo" class="w-32 mb-6 logo-glow shadow-lg rounded-full border-4 border-yellow-500 gradient-border floating" />
+    <div class="absolute top-16 left-1/4 w-48 h-48 bg-yellow-900/10 rounded-full blur-2xl -z-10 parallax-float"></div>
+    <div class="absolute bottom-20 right-1/5 w-72 h-72 bg-yellow-500/20 rounded-full blur-2xl -z-10 parallax-float"></div>
+    <img src="logo.png" alt="ZENTA Logo" class="w-32 mb-6 logo-glow glow-anim shadow-lg rounded-full border-4 border-yellow-500 gradient-border floating" />
 
     <!-- Hero Slideshow -->
     <div id="hero-slideshow" class="w-full max-w-3xl mx-auto mb-8 rounded-2xl overflow-hidden neon-border">
@@ -125,7 +145,7 @@
       <div id="countdown" class="text-3xl font-mono text-yellow-500"></div>
     </div>
     <!-- Discord Button -->
-    <a href="https://discord.gg/xve6Z4fnkE" class="mt-8 px-8 py-4 bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold rounded-2xl shadow-xl btn-glow hover:scale-105 transition-transform duration-150 inline-block">
+    <a href="https://discord.gg/xve6Z4fnkE" class="mt-8 px-8 py-4 bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold rounded-2xl shadow-xl btn-glow btn-flicker hover:scale-105 transition-transform duration-150 inline-block">
       Join Our Discord
     </a>
   </section>
@@ -194,19 +214,19 @@
   <section id="team" class="px-4 sm:px-8 py-20 bg-black text-gray-200 reveal">
     <h2 class="text-4xl font-bold mb-10 text-yellow-500 font-orbitron text-center">Meet the Team</h2>
     <div class="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl">
-        <img src="logo.png" alt="Founder" class="w-24 h-24 rounded-full mx-auto mb-4 logo-glow border-2 border-yellow-600" />
+      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl hover:scale-105 transition-transform duration-200">
+        <img src="logo.png" alt="Founder" class="w-24 h-24 rounded-full mx-auto mb-4 logo-glow glow-anim border-2 border-yellow-600" />
         <h4 class="text-xl font-bold text-yellow-400">Glidez Plus</h4>
         <p class="text-yellow-100 font-medium">Founder & CEO</p>
         <p class="mt-2 text-gray-400 text-base">Visionary, esports strategist, and lifelong gamer. Building the future of competitive play.</p>
       </div>
-      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl">
+      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl hover:scale-105 transition-transform duration-200">
         <img src="logo.png" alt="Community Lead" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-yellow-600" />
         <h4 class="text-xl font-bold text-yellow-400">Picm Plus</h4>
         <p class="text-yellow-100 font-medium">Community Lead</p>
         <p class="mt-2 text-gray-400 text-base">Champion for diversity and inclusion, connecting gamers worldwide.</p>
       </div>
-      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl">
+      <div class="bg-[#181818] glassy rounded-2xl p-8 text-center border border-yellow-900/40 shadow-xl hover:scale-105 transition-transform duration-200">
         <img src="logo.png" alt="Dev Lead" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-yellow-600" />
         <h4 class="text-xl font-bold text-yellow-400">Viper Plus</h4>
         <p class="text-yellow-100 font-medium">Lead Developer</p>
@@ -219,23 +239,23 @@
   <section id="faq" class="px-4 sm:px-8 py-20 bg-gradient-to-b from-gray-900 via-black to-[#232323] text-gray-200 reveal">
     <h2 class="text-4xl font-bold mb-10 text-yellow-500 font-orbitron text-center">Frequently Asked Questions</h2>
     <div class="max-w-4xl mx-auto space-y-8">
-      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg hover:scale-[1.02] transition-transform duration-150">
         <h4 class="font-bold text-yellow-400">How do I join a tournament?</h4>
         <p class="text-yellow-100 mt-2">Join our Discord and check the tournaments channel. Registration links, rules, and schedules are posted there and on our upcoming web dashboard.</p>
       </div>
-      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg hover:scale-[1.02] transition-transform duration-150">
         <h4 class="font-bold text-yellow-400">Is ZENTA free to join?</h4>
         <p class="text-yellow-100 mt-2">Yes! Participation in most tournaments is free. Premium events may require an entry fee, but there are always free competitions available.</p>
       </div>
-      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg hover:scale-[1.02] transition-transform duration-150">
         <h4 class="font-bold text-yellow-400">What prizes can I win?</h4>
         <p class="text-yellow-100 mt-2">Winners can earn real cash, crypto rewards, exclusive digital items, and more. Prize pools vary by tournament.</p>
       </div>
-      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg hover:scale-[1.02] transition-transform duration-150">
         <h4 class="font-bold text-yellow-400">Which regions do you support?</h4>
         <p class="text-yellow-100 mt-2">We focus on all countries, and players from anywhere are welcome. Some tournaments may have region locks for fairness.</p>
       </div>
-      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg">
+      <div class="glassy rounded-xl p-6 border border-yellow-900/30 shadow-lg hover:scale-[1.02] transition-transform duration-150">
         <h4 class="font-bold text-yellow-400">How can I get involved as a creator or sponsor?</h4>
         <p class="text-yellow-100 mt-2">Apply for our Creator Program or contact us via Discord for sponsorship opportunities and partnerships.</p>
       </div>
@@ -247,13 +267,16 @@
     <div class="max-w-3xl mx-auto glassy rounded-xl p-8 border border-yellow-700/30 shadow-lg">
       <h2 class="text-3xl text-yellow-400 font-bold mb-2 font-orbitron">Contact Us</h2>
       <p class="text-yellow-100 mb-4">Questions? Want to partner or sponsor? Reach out below!</p>
-      <form action="mailto:glidezplus@gmail.com" method="POST" enctype="text/plain" class="flex flex-col gap-4 items-center">
-        <input type="text" name="name" required placeholder="Your Name" class="px-4 py-2 rounded bg-gray-800 text-white border border-yellow-800/30 w-64 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-        <input type="email" name="email" required placeholder="Your Email" class="px-4 py-2 rounded bg-gray-800 text-white border border-yellow-800/30 w-64 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-        <textarea name="message" required placeholder="Your Message" class="px-4 py-2 rounded bg-gray-800 text-white border border-yellow-800/30 w-64 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
-        <button type="submit" class="bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-semibold px-8 py-2 rounded-lg hover:bg-yellow-400 border-2 border-yellow-800/20 transition btn-glow">
-          Send Message
+      <form id="contactForm" action="https://formspree.io/f/meokggkv" method="POST" class="flex flex-col gap-4 items-center">
+        <input type="text" name="name" required placeholder="Your Name" class="px-4 py-2 rounded bg-gray-800 text-white border border-yellow-800/30 w-64 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition" />
+        <input type="email" name="email" required placeholder="Your Email" class="px-4 py-2 rounded bg-gray-800 text-white border border-yellow-800/30 w-64 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition" />
+        <textarea name="message" required placeholder="Your Message" class="px-4 py-2 rounded bg-gray-800 text-white border border-yellow-800/30 w-64 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"></textarea>
+        <button id="sendBtn" type="submit" class="bg-gradient-to-tr from-yellow-500 via-yellow-400 to-yellow-300 text-black font-semibold px-8 py-2 rounded-lg hover:bg-yellow-400 border-2 border-yellow-800/20 transition btn-glow btn-flicker flex items-center gap-2">
+          <span id="sendBtnText">Send Message</span>
+          <svg id="sendSpinner" class="hidden animate-spin h-5 w-5 text-yellow-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
         </button>
+        <div id="contactSuccess" class="hidden text-green-400 mt-2 text-lg font-medium">Thank you! Your message has been sent. 🎉</div>
+        <div id="contactError" class="hidden text-red-400 mt-2 text-lg font-medium">Oops! Something went wrong. Please try again.</div>
       </form>
       <div class="mt-6 flex justify-center gap-6">
         <a href="https://discord.gg/xve6Z4fnkE" target="_blank" class="text-yellow-400 hover:underline text-lg">Discord</a>
@@ -344,13 +367,53 @@
     const slides = document.querySelectorAll('#hero-slideshow img');
     let curr = 0;
     setInterval(() => {
+      slides[curr].style.opacity = "0";
       slides[curr].style.display = "none";
       curr = (curr + 1) % slides.length;
       slides[curr].style.display = "block";
+      setTimeout(()=>slides[curr].style.opacity="1", 50);
     }, 3500);
 
-    // Language Switcher (optional, advanced: implement as needed)
-    // Add your language logic here if desired
+    // CONTACT FORM AJAX + FEEDBACK
+    const contactForm = document.getElementById("contactForm");
+    const sendBtn = document.getElementById("sendBtn");
+    const sendBtnText = document.getElementById("sendBtnText");
+    const sendSpinner = document.getElementById("sendSpinner");
+    const contactSuccess = document.getElementById("contactSuccess");
+    const contactError = document.getElementById("contactError");
+
+    if(contactForm) {
+      contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        sendBtn.disabled = true;
+        sendBtnText.textContent = "Sending...";
+        sendSpinner.classList.remove("hidden");
+        contactSuccess.classList.add("hidden");
+        contactError.classList.add("hidden");
+
+        const data = new FormData(contactForm);
+        fetch(contactForm.action, {
+          method: "POST",
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          sendBtn.disabled = false;
+          sendBtnText.textContent = "Send Message";
+          sendSpinner.classList.add("hidden");
+          if(response.ok) {
+            contactSuccess.classList.remove("hidden");
+            contactForm.reset();
+          } else {
+            contactError.classList.remove("hidden");
+          }
+        }).catch(() => {
+          sendBtn.disabled = false;
+          sendBtnText.textContent = "Send Message";
+          sendSpinner.classList.add("hidden");
+          contactError.classList.remove("hidden");
+        });
+      });
+    }
   </script>
 </body>
 </html>
